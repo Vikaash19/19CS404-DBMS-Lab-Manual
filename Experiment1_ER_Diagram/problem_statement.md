@@ -32,7 +32,6 @@ Design a database for patient management, appointments, medical records, and bil
 - Appointments with reason, time, patient-doctor link.
 - Medical records with treatments, diagnosis, test results.
 - Billing and payment details for each appointment.
-
 ---
 
 ## 📝 Tasks:
@@ -70,9 +69,10 @@ Hospital
 - Generates: Each appointment generates exactly one medical record; each medical record is linked to exactly one appointment (1:1), with total participation on both sides.
 - BilledBy: Each appointment is billed by one bill (1:1), with total participation on both sides.
 - PaidBy: One bill is paid by multiple payments; each payment is linked to exactly one bill (1:M), with total participation on both sides.
-## Extension (Billing):
-Billing is modeled as a separate entity linked 1:1 with Appointment to capture charges generated for each appointment.
-
+## Extension:
+- Billing is modeled as a separate entity linked 1:1 with Appointment to capture charges for each visit.
+- Payment is modeled as a separate entity linked 1:M with Billing to support multiple payments per bill, allowing for partial or mixed payment methods.
+- 
 ## Design Choices:
 - Entities were chosen to capture critical patient management data: patients, doctors, departments, appointments, medical records, billing, and payments.
 - Relationships are designed to efficiently link patients, doctors, appointments, and billing information.
